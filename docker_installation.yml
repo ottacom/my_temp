@@ -48,9 +48,20 @@
         state: latest
       become: yes
 
-    - name: Install lvm2
+    - name: Install epel-release
       yum:
-        name: docker-compse
+        name: epel-release
+        state: latest
+        
+    - name: Install python-pip
+      yum:
+        name: python-pip
+        state: latest
+
+
+    - name: Install docker-compose
+      yum:
+        name: docker-compose
         state: latest
 
 
@@ -60,3 +71,6 @@
         state: started
         enabled: yes
       become: yes
+
+
+
